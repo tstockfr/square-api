@@ -1,8 +1,8 @@
-const { Client, Environment } = require('square');
+const { SquareClient, SquareEnvironment } = require('square');
 
-const squareClient = new Client({
-  environment: Environment.Production,
-  accessToken: process.env.SQUARE_PRODUCTION_ACCESS_TOKEN,
+const squareClient = new SquareClient({
+  environment: SquareEnvironment.Production,
+  token: process.env.SQUARE_PRODUCTION_ACCESS_TOKEN,
 });
 
 const paymentsApi = squareClient.paymentsApi;
@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
 
   try {
 
-    const response = await paymentsApi.createPayment({
+    const response = await squareClient.payments.createPayment({
       sourceId,
       verificationToken,
       idempotencyKey: orderId,
