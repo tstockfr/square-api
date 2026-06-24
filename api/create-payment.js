@@ -65,11 +65,13 @@ module.exports = async (req, res) => {
 
   } catch (error) {
 
-    console.error('Erreur Square :', error);
+    console.error('Erreur Square complète :');
+    console.error(JSON.stringify(error, null, 2));
 
     return res.status(500).json({
       success: false,
-      error: 'Erreur serveur Square'
+      error: 'Erreur serveur Square',
+      details: error.message
     });
-  }
+}
 };
