@@ -1,7 +1,0 @@
-{
-  "name": "square-api",
-  "version": "1.0.0",
-  "dependencies": {
-    "square": "^43.1.0"
-  }
-}
