@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
 
   try {
 
-    const response = await squareClient.payments.createPayment({
+    const response = await squareClient.paymentsApi.createPayment({
       sourceId,
       verificationToken,
       idempotencyKey: orderId,
